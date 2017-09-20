@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.output = new System.Windows.Forms.TextBox();
             this.excludeComments = new System.Windows.Forms.CheckBox();
             this.useRecursive = new System.Windows.Forms.CheckBox();
@@ -44,6 +45,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.multiline = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +58,7 @@
             this.output.ReadOnly = true;
             this.output.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.output.Size = new System.Drawing.Size(480, 181);
-            this.output.TabIndex = 0;
+            this.output.TabIndex = 8;
             this.output.WordWrap = false;
             // 
             // excludeComments
@@ -65,7 +67,7 @@
             this.excludeComments.Location = new System.Drawing.Point(12, 102);
             this.excludeComments.Name = "excludeComments";
             this.excludeComments.Size = new System.Drawing.Size(124, 17);
-            this.excludeComments.TabIndex = 1;
+            this.excludeComments.TabIndex = 5;
             this.excludeComments.Text = "Exclude special lines";
             this.excludeComments.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.excludeComments.UseVisualStyleBackColor = true;
@@ -77,7 +79,7 @@
             this.useRecursive.Location = new System.Drawing.Point(12, 79);
             this.useRecursive.Name = "useRecursive";
             this.useRecursive.Size = new System.Drawing.Size(180, 17);
-            this.useRecursive.TabIndex = 2;
+            this.useRecursive.TabIndex = 4;
             this.useRecursive.Text = "Recursively check for subfolders";
             this.useRecursive.UseVisualStyleBackColor = true;
             // 
@@ -87,7 +89,8 @@
             this.singleline.Location = new System.Drawing.Point(3, 43);
             this.singleline.Name = "singleline";
             this.singleline.Size = new System.Drawing.Size(222, 20);
-            this.singleline.TabIndex = 3;
+            this.singleline.TabIndex = 6;
+            this.singleline.Enter += new System.EventHandler(this.singleline_TakesFocus);
             // 
             // label1
             // 
@@ -112,7 +115,7 @@
             this.analyzeButton.Location = new System.Drawing.Point(215, 430);
             this.analyzeButton.Name = "analyzeButton";
             this.analyzeButton.Size = new System.Drawing.Size(75, 23);
-            this.analyzeButton.TabIndex = 6;
+            this.analyzeButton.TabIndex = 0;
             this.analyzeButton.Text = "Analyze";
             this.analyzeButton.UseVisualStyleBackColor = true;
             this.analyzeButton.Click += new System.EventHandler(this.analyzeButton_Click);
@@ -140,7 +143,7 @@
             this.browse.Location = new System.Drawing.Point(417, 24);
             this.browse.Name = "browse";
             this.browse.Size = new System.Drawing.Size(75, 23);
-            this.browse.TabIndex = 11;
+            this.browse.TabIndex = 2;
             this.browse.Text = "Browse...";
             this.browse.UseVisualStyleBackColor = true;
             this.browse.Click += new System.EventHandler(this.browse_Click);
@@ -150,14 +153,15 @@
             this.fileEndings.Location = new System.Drawing.Point(84, 53);
             this.fileEndings.Name = "fileEndings";
             this.fileEndings.Size = new System.Drawing.Size(408, 20);
-            this.fileEndings.TabIndex = 12;
+            this.fileEndings.TabIndex = 3;
+            this.fileEndings.Enter += new System.EventHandler(this.fileEndings_TakesFocus);
             // 
             // folderBox
             // 
             this.folderBox.Location = new System.Drawing.Point(84, 26);
             this.folderBox.Name = "folderBox";
             this.folderBox.Size = new System.Drawing.Size(326, 20);
-            this.folderBox.TabIndex = 13;
+            this.folderBox.TabIndex = 1;
             // 
             // panel1
             // 
@@ -186,7 +190,8 @@
             this.multiline.Location = new System.Drawing.Point(254, 43);
             this.multiline.Name = "multiline";
             this.multiline.Size = new System.Drawing.Size(222, 20);
-            this.multiline.TabIndex = 6;
+            this.multiline.TabIndex = 7;
+            this.multiline.Enter += new System.EventHandler(this.multiline_TakesFocus);
             // 
             // label5
             // 
@@ -244,6 +249,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.MaskedTextBox multiline;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ToolTip toolTip1;
 
         private class CustomTextBox : global::LineCounter.CustomTextBox
         {
